@@ -794,6 +794,8 @@ public abstract class ZWaveSecurityCommandClass extends ZWaveCommandClass {
         if (payloadEncapsulationQueue == null) {
             payloadEncapsulationQueue = new ConcurrentLinkedQueue<ZWaveSecurityPayloadFrame>();
         }
+        //This is required if the application is restarted after security initialization is completed. 
+        startSecurityEncapsulationThread();
     }
 
     public void startSecurityEncapsulationThread() {

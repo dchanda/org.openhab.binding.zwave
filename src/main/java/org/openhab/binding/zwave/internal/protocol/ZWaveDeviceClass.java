@@ -619,6 +619,9 @@ public class ZWaveDeviceClass {
                 case SPECIFIC_TYPE_GATEWAY:
                     return new CommandClass[] { CommandClass.VERSION, CommandClass.MANUFACTURER_SPECIFIC,
                             CommandClass.SECURITY };
+                    
+                case SECURE_BARRIER:
+                	return new CommandClass[] { CommandClass.SECURITY, CommandClass.BARRIER_OPERATOR };
                 default:
                     return new CommandClass[0];
             }
